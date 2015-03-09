@@ -99,7 +99,7 @@ puppet_tarsnap::backups:
 
 ### Resource parameter description for 'puppet_tarsnap::resource::backups':
 
-$archive_name         = $name, # This will be the pre-fix for the kind for backups taken on this machine. The Tarsnap cronjob and bash script will be named after it.
-$rm_after_upload      = undef, # Set this to 'yes-remove-I-know-what-I-am-doing' if you want to remove the specified files and folders once uploaded to Tarsnap (Use with CAUTION, as it will do a 'rm -rf')
-$machine_name         = undef, # If you want to tag your machine specifically on tarsnap then define it here. Otherwise the default 'hostname' will be used.
-$send_alerts_to       = undef, # Use a vaild 'To' address ('Firstname Lastname <firstname.lastname@example.com>') for receiving notifications in case of errors during Tarsnap backup process.
+* $archive_name         = $name, # This will be the pre-fix for the kind for backups taken on this machine. The Tarsnap cronjob and bash script will be named after it.
+* $rm_after_upload      = undef, # Set this to 'yes-remove-I-know-what-I-am-doing' if you want to remove the specified files and folders once uploaded to Tarsnap (Use with CAUTION, as it will do a 'rm -rf')
+* $machine_name         = undef, # If you want to tag your machine specifically on tarsnap then define it here. Otherwise the default 'hostname' will be used.
+* $send_alerts_to       = undef, # Use a vaild 'To' address ('Firstname Lastname <firstname.lastname@example.com>') for receiving notifications in case of errors during Tarsnap backup process.
