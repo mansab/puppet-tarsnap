@@ -28,7 +28,7 @@ This module has been tested against Tarsnap - 1.0.35 and CentOS 6,7
 ### Tarsnap RPM
 
 Tarsnap RPM has been provided as a part of this Puppet module under 'puppet_tarsnap/files/rpms'
-NOTE: The RPM has been built using the Tarsnap source provided here: https://www.tarsnap.com/download.html
+The RPM has been built using the Tarsnap source provided here: https://www.tarsnap.com/download.html
 
 ## Quick Start
 
@@ -37,8 +37,6 @@ NOTE: The RPM has been built using the Tarsnap source provided here: https://www
 * Puppet-2.7.0 or later
 * Ruby-1.9.3 or later (Support for Ruby-1.8.7 is not guaranteed. YMMV).
 
-## Usage:
-
 ### Install Tarsnap client
 
 ```puppet
@@ -46,7 +44,7 @@ class { 'puppet_tarsnap': }
 ```
 
 ### Configure Tarsnap key for creating new archives (This key hhould have write previleges)
-# This will configure the Tarsnap key at: /etc/tarsnap/tarsnap-write-key
+This will configure the Tarsnap key at: /etc/tarsnap/tarsnap-write-key
 
 ```puppet
 class { 'puppet_tarsnap': 
