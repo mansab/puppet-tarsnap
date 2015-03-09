@@ -1,3 +1,5 @@
+# puppet_tarsnap
+
 This is a Puppet module for managing Tarsnap backups.
 
 Author: Mansab Uppal
