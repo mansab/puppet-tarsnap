@@ -14,9 +14,9 @@ This module installs and manage Tarsnap (http://tarsnap.com/)
 
 ##Module description
 
-The puppet_tarsnap module will install Tarsnap client and can manage tarsnap key, backup scripts and cron jobs.
+The puppet_tarsnap module will install Tarsnap client and can manage tarsnap key, backup scripts, cron jobs, logs & alerts.
 
-This module has been tested against Tarsnap - 1.0.35 and CentOS 6,7
+This module has been tested against Tarsnap - 1.0.35 and CentOS 6 & 7
 
 ##Setup
 
@@ -25,7 +25,9 @@ This module has been tested against Tarsnap - 1.0.35 and CentOS 6,7
 * Tarsnap package as an RPM.
 * Tarsnap configuration file.
 * Cron Job for Tarsnap backups.
-* Write key for uploading Tarsnap archives.
+* Tarsnap key for uploading Tarsnap archives.
+* Alert emails (with reason) in case for backup failures.
+* Tarsnap logs for specified archives (/var/log/tarsnap/)
 
 ### Tarsnap RPM
 
@@ -58,7 +60,7 @@ class { 'puppet_tarsnap':
   5XhwMsb3mXly/2Npg7gOYw55ABdqWCxpPo80fiEOv3VMYWiT2ERpoOCarMVZZR6B
   v34z/Fiqri+6qyVwEpFsYMA5BylDRgJe4r+7VgZf/4fLH6ECQQDZHNNvkm6PG6lQ
   vwIjoXBeiYxYIauU0cfb00vOH6a5mA30O6KQobF9aeiF7tavr/onCz7bDm4Sg8BE
-  ---- END TARSNAP SAMPLE KEY -----'
+  ----- END TARSNAP SAMPLE KEY -----'
 }
 ```
 
@@ -84,6 +86,15 @@ Defining Tarsnap resources in Hiera.
 
 ```yaml
 puppet_tarsnap::backups_enabled: 'true'
+
+puppet_tarsnap::tarsnap_write_key: |
+  ----- BEGIN TARSNAP SAMPLE KEY -----
+  hE/F8hT2OH6wtYwzFQ/NVb/cBhGBfwseejYoEN5yVrEBiL94qhsN9kYghwIDAQAB
+  AoGAD87W3x0/BMmCCNmInPWLgcJHZtudfialnPPj1D1eMamDYdl79Tx9qkdVFJkR
+  5XhwMsb3mXly/2Npg7gOYw55ABdqWCxpPo80fiEOv3VMYWiT2ERpoOCarMVZZR6B
+  v34z/Fiqri+6qyVwEpFsYMA5BylDRgJe4r+7VgZf/4fLH6ECQQDZHNNvkm6PG6lQ
+  vwIjoXBeiYxYIauU0cfb00vOH6a5mA30O6KQobF9aeiF7tavr/onCz7bDm4Sg8BE
+  ----- END TARSNAP SAMPLE KEY -----
 
 puppet_tarsnap::backups:
   'webserver-node01':
