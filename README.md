@@ -45,8 +45,9 @@ The RPM has been built using the Tarsnap source provided here: https://www.tarsn
 class { 'puppet_tarsnap': }
 ```
 
-### Configure Tarsnap key for creating new archives (This key hhould have write previleges)
-This will configure the Tarsnap key at: /etc/tarsnap/tarsnap-write-key
+### Configure Tarsnap key for creating new archives 
+ - This key should have write previleges to Tarsnap servers - https://www.tarsnap.com/man-tarsnap-keymgmt.1.html
+ - The key will be installed at: /etc/tarsnap/tarsnap-write-key
 
 ```puppet
 class { 'puppet_tarsnap': 
@@ -71,8 +72,8 @@ class { 'puppet_tarsnap':
 puppet_tarsnap::resource::backups { 'webserver-node01':
   directories => ['/var/www/html', '/srv/www'],
   files       => ['/etc/nginx/sites-available/www.example.com', '/etc/nginx/.htpasswd'],
-  cron_hour   => '*/1'
-  cron_minute => '30'
+  cron_hour   => '*/1',
+  cron_minute => '30',
   send_alerts_to: 'Firstname Lastname <firstname.lastname@example.com>'
 }
 ```
