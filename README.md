@@ -72,11 +72,11 @@ class { 'puppet_tarsnap':
 }
 
 puppet_tarsnap::resource::backups { 'webserver-node01':
-  directories => ['/var/www/html', '/srv/www'],
-  files       => ['/etc/nginx/sites-available/www.example.com', '/etc/nginx/.htpasswd'],
-  cron_hour   => '*/1',
-  cron_minute => '30',
-  send_alerts_to: 'Firstname Lastname <firstname.lastname@example.com>'
+  directories    => ['/var/www/html', '/srv/www'],
+  files          => ['/etc/nginx/sites-available/www.example.com', '/etc/nginx/.htpasswd'],
+  cron_hour      => '*/1',
+  cron_minute    => '30',
+  send_alerts_to => 'Firstname Lastname <firstname.lastname@example.com>'
 }
 ```
 
